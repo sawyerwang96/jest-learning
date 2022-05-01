@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header style change 1`] = `
+<div class="header">
+  TodoList
+  <input type="text" data-test="input">
+</div>
+`;

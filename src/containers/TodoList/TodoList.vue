@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header />
+    <Header @add="addItem" />
   </div>
 </template>
 
@@ -11,6 +11,16 @@ export default {
   props: {},
   components: {
     Header
+  },
+  data () {
+    return {
+      undoList: []
+    }
+  },
+  methods: {
+    addItem (item) {
+      this.undoList.push(item)
+    }
   }
 }
 </script>

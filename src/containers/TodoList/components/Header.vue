@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="header">
+    TodoList
     <input
       type="text"
       data-test="input"
@@ -26,3 +27,11 @@ export default {
   }
 }
 </script>
+
+<style>
+.header {
+  background-color: #666;
+  height: 60px;
+  line-height: 60px;
+}
+</style>
