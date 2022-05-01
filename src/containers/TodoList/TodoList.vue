@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="todoListWrapper">
     <Header @add="addItem" />
     <UndoList :list="undoList" @delete="handleDeleteItem" />
   </div>
@@ -21,8 +21,11 @@ export default {
     }
   },
   methods: {
-    addItem (item) {
-      this.undoList.push(item)
+    addItem (value) {
+      this.undoList.push({
+        status: 'div',
+        value
+      })
     },
     handleDeleteItem (index) {
       this.undoList.splice(index, 1)
@@ -31,4 +34,9 @@ export default {
 }
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.todoListWrapper {
+  height: 100vh;
+  background: #cccccc;
+}
+</style>

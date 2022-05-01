@@ -1,12 +1,15 @@
 <template>
-  <div class="header">
-    TodoList
-    <input
-      type="text"
-      data-test="input"
-      v-model="inputValue"
-      @keyup.enter="add"
-    />
+  <div class="headerWrapper">
+    <div class="headerInner">
+      <span class="des">TodoList</span>
+      <input
+        class="todoInput"
+        type="text"
+        data-test="input"
+        v-model="inputValue"
+        @keyup.enter="add"
+      />
+    </div>
     <!-- <el-row type="flex" class="row-bg" justify="center">
       <el-col :span="4">
         <div class="grid-content bg-purple title">
@@ -53,14 +56,29 @@ export default {
 }
 </script>
 
-<style scoped>
-.header {
+<style scoped lang="scss">
+.headerWrapper {
   background-color: #666;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 60px;
-  line-height: 60px;
-}
 
-.title {
-  color: #FFFFFF;
+  .headerInner {
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+  }
+
+  .des {
+    font-size: 30px;
+    color: #FFFFFF;
+  }
+
+  .todoInput {
+    width: 400px;
+    padding-left: 10px;
+    font-size: 18px;
+  }
 }
 </style>
