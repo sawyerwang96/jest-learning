@@ -7,6 +7,31 @@
       v-model="inputValue"
       @keyup.enter="add"
     />
+    <!-- <el-row type="flex" class="row-bg" justify="center">
+      <el-col :span="4">
+        <div class="grid-content bg-purple title">
+          <h2>TodoList</h2>
+        </div>
+      </el-col>
+      <el-col :span="8">
+        <div class="grid-content bg-purple">
+          TodoList
+          <input
+            type="text"
+            data-test="input"
+            v-model="inputValue"
+            @keyup.enter="add"
+          />
+          <el-input
+            id="todoInput"
+            data-test="input"
+            v-model="inputValue"
+            @change="add"
+            placeholder="添加ToDo"
+          ></el-input>
+        </div>
+      </el-col>
+    </el-row> -->
   </div>
 </template>
 
@@ -28,10 +53,14 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .header {
   background-color: #666;
   height: 60px;
   line-height: 60px;
+}
+
+.title {
+  color: #FFFFFF;
 }
 </style>
