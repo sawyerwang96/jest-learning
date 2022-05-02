@@ -51,4 +51,40 @@ describe('TodoList.vue', () => {
     undoList.splice(1, 1)
     expect(wrapper.vm.$data.undoList).toEqual(undoList)
   })
+
+  it('handleChangeStatus方法被调用时', () => {
+    const wrapper = shallowMount(TodoList)
+    const undoList = [
+      { status: 'div', value: 1 },
+      { status: 'div', value: 2 },
+      { status: 'div', value: 3 }
+    ]
+    wrapper.setData({ undoList })
+    wrapper.vm.handleChangeStatus(1)
+    expect(wrapper.vm.$data.undoList).toEqual([
+      { status: 'div', value: 1 },
+      { status: 'input', value: 2 },
+      { status: 'div', value: 3 }
+    ])
+  })
+
+  it('changItemValue方法执行时 undoList内容变化', () => {
+    const wrapper = shallowMount(TodoList)
+    wrapper.setData({
+      undoList: [
+        { status: 'div', value: 1 },
+        { status: 'div', value: 2 },
+        { status: 'div', value: 3 }
+      ]
+    })
+    wrapper.vm.handleChangeItemValue({
+      index: 1,
+      value: '44444'
+    })
+    expect(wrapper.vm.$data.undoList).toEqual([
+      { status: 'div', value: 1 },
+      { status: 'div', value: '44444' },
+      { status: 'div', value: 3 }
+    ])
+  })
 })
