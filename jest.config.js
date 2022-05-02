@@ -19,6 +19,7 @@ module.exports = {
     require.resolve('jest-transform-stub'),
     '^.+\\.jsx?$': require.resolve('babel-jest')
   },
+  collectCoverageFrom: ['**/*.{js,vue}', '!**/node_modules/**'],
   transformIgnorePatterns: ['/node_modules/'],
   // support the same @ -> src alias mapping in source code
   moduleNameMapper: {
